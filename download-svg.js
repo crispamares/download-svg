@@ -16,11 +16,6 @@
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
-(function() {
-
-downloadSVG = downloadSVG;
-
 function downloadSVG(svg, doc) {
     
     window.URL = (window.URL || window.webkitURL);
@@ -28,6 +23,7 @@ function downloadSVG(svg, doc) {
     doc = doc || document;
 
     var styles = getStyles(doc);
+    console.log("STYLES:", styles);
     var svgInfo = getSVGSource(svg, styles);
 
     download(svgInfo);
@@ -58,7 +54,7 @@ function getSVGSource(svg, styles) {
 
     var defsEl = document.createElement("defs");
     svg.insertBefore(defsEl, svg.firstChild); //TODO   .insert("defs", ":first-child")
-    defsEl.setAttribute("class", "download-svg-rubbish");
+    // defsEl.setAttribute("class", "download-svg-rubbish"); 
     
     var styleEl = document.createElement("style");
     defsEl.appendChild(styleEl);
@@ -152,5 +148,4 @@ function getStyles(doc) {
     return styles;
 }
 
-
-})();
+module.exports = downloadSVG;
