@@ -15,3 +15,7 @@ var downloadSVG = require("download-svg");   // I use webpack, but not needed
 var svg = document.getElementById("MySVG");
 downloadSVG(svg);
 ```
+
+----
+
+Based on https://github.com/NYTimes/svg-crowbar
