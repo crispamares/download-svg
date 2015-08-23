@@ -2,7 +2,7 @@
 
 A script to download a SVG image (e.g. a d3 visualization) embeding related css stylessheets
 
-Only stylesheets with ``title="embed-svg"`` will be used.
+ It is not interesting to include every stylesheets in the SVG so **only** stylesheets with ``title="embed-svg"`` will be used. 
 
 ```html
 <link rel="stylesheet" href="needed-stylesheet.css" title="embed-svg">
